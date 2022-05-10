@@ -1,5 +1,6 @@
 package me.dio.conding.votacao.bbb.api.controller;
 
+import lombok.AllArgsConstructor;
 import me.dio.conding.votacao.bbb.api.model.ParametrizationModel;
 import me.dio.conding.votacao.bbb.api.repository.ParametrizationRepository;
 import org.springframework.http.ResponseEntity;
@@ -9,13 +10,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/parametrizations")
+@AllArgsConstructor
 public class ParametrizationController {
 
     private final ParametrizationRepository parametrizationRepository;
-
-    public ParametrizationController(ParametrizationRepository parametrizationRepository) {
-        this.parametrizationRepository = parametrizationRepository;
-    }
 
     @PostMapping
     public ResponseEntity<ParametrizationModel> save(@RequestBody ParametrizationModel parametrizationModel) {
